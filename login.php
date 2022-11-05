@@ -27,10 +27,6 @@
 </form>
 
 <?php
-$name=$password="";
-
-
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["name"])) {
       $nameErr = "Name is required";
@@ -60,9 +56,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       }else if(!empty($_POST["password"])){
         $password = htmlspecialchars($_POST["password"]);
       }
- 
-
-
   }
 
   if(!empty($_POST['remember'])){
@@ -75,7 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     setcookie($cookie_name, $cookie_value, time() + (60*60*24* 30), "/"); 
     setcookie($cookie_name2, $cookie_value2, time() + (60*60*24* 30), "/"); 
 
-    //print_r($_COOKIE['name']);
+    //print_r($_COOKIE);
 
   }
 
@@ -84,6 +77,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // if($_COOKIE['name']==$name && $_COOKIE['password']==$password){
     //   echo "Successfully Logged In by cookie";
     // }
+    session_start();
+
+    $_SESSION['user']=$name;
+    $_SESSION['pass']=$password;
 
     $file = file_get_contents('data.json');
     $assoc = json_decode($file, true);

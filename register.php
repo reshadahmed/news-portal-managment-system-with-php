@@ -67,7 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
       if(file_exists('data.json'))  
         {  
-               if(!empty($name) && !empty($email) && !empty($gender) && !empty($dob) && !empty($password)){
+            if(!empty($name) && !empty($email) && !empty($gender) && !empty($dob) && !empty($password)){
               $current_data = file_get_contents('data.json');  
               $array_data = json_decode($current_data,true);
               $extra = array(  
