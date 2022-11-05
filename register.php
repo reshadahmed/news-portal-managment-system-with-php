@@ -6,8 +6,8 @@
 </style>
 </head>
 <body>  
-
 <?php
+include "header.php";
 
 $nameErr= $nameErr2 = $emailErr = $genderErr = $dobErr = $passErr= "";
 $name = $email = $gender = $dob = $password = "";
@@ -94,19 +94,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
              echo 'JSON File not exits';  
         }
       }
-
-    
-    
-
-
-
       // else if(empty($_POST["confirm_password"]))  
       // {  
       //      $error = "<label class='text-danger'>Confirm password field cannot be empty</label>";  
       // }
-
- 
-
 ?>
 <h2>PHP Form Validation Example</h2>
 <p><span class="error">* Required field</span></p>
@@ -132,9 +123,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <span class="error">* <?php echo $passErr;?></span>
   <br><br>
 
-  <span class="error">
-    *
-</span>
     
  <br><br>
 
@@ -143,5 +131,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <input type="submit" name="submit" value="Submit">  
 </form>
+<?php
+include "footer.php"
+?>
 </body>
 </html>

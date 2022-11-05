@@ -7,14 +7,16 @@
     <title>Document</title>
 </head>
 <body>
-
+<?php
+include "header.php"
+?>
 <h1>Hello User</h1>
     <?php
     session_start();
-    $name= $_SESSION['user'];
-    $password=$_SESSION['pass'];
+    // $name= $_SESSION['user'];
+    // $password=$_SESSION['pass'];
     
-    if(!empty($name) && !empty($password)){
+    if(!empty($_SESSION['user']) && !empty($_SESSION['pass'])){
         $file = file_get_contents('data.json');
         $assoc = json_decode($file, true);
         //var_dump($assoc);
@@ -30,6 +32,17 @@
             }
         }
       }
-    ?>
+      else{
+        echo "<h2>First Logged In</h2>";
+      }
+?>
+
+<form action="logout.php" method="post">
+<button type="submit">Log Out</button>
+</form>
+
+ <?php     
+include "footer.php"
+?>
 </body>
 </html>

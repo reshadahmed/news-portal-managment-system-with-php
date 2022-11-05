@@ -7,6 +7,33 @@
     <title>Document</title>
 </head>
 <body>
+<?php
+include "header.php"
+?>
+<h1>Hello User</h1>
+    <?php
     
+        $file = file_get_contents('post.json');
+        $assoc = json_decode($file, true);
+        //var_dump($assoc);
+    
+        foreach($assoc as $file){
+                echo "<hr>";
+                echo "Title: ".$file['title']."<br>";
+                echo "Details: ".$file['details']."<br>";
+                echo "Date: ".$file['date']."<br>";
+                echo "Author: ".$file['author']."<br>";
+                //header('Location:profile.php');
+                echo "<hr>";
+        }
+?>
+
+<!-- <form action="logout.php" method="post">
+<button type="submit">Log Out</button>
+</form> -->
+
+ <?php     
+include "footer.php"
+?>
 </body>
 </html>

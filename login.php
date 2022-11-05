@@ -7,15 +7,33 @@
     <title>Document</title>
 </head>
 <body>
-
+<?php
+include "header.php"
+?>
 <form action="" method="post">
   <div class="container">
     <label for="name"><b>name</b></label>
-    <input type="text" placeholder="Enter Username" name="name" value="<?php echo $_COOKIE['name'] ?>" required>
+    <input type="text" placeholder="Enter Username" name="name" value="<?php 
+    if(isset($_COOKIE['name'])){
+      echo $_COOKIE['name'];
+    }
+    else{
+      echo "";
+    }
+     
+    ?>" >
     <br>
 
     <label for="password"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="password" value="<?php echo $_COOKIE['password'] ?>" required>
+    <input type="password" placeholder="Enter Password" name="password" value="<?php 
+    if(isset($_COOKIE['password'])){
+      echo $_COOKIE['password'];
+    }
+    else{
+      echo "";
+    }
+
+    ?>" >
     <br>
     
     <label>
@@ -27,6 +45,9 @@
 </form>
 
 <?php
+$name=$password="";
+
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["name"])) {
       $nameErr = "Name is required";
@@ -56,22 +77,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       }else if(!empty($_POST["password"])){
         $password = htmlspecialchars($_POST["password"]);
       }
-  }
 
-  if(!empty($_POST['remember'])){
+      if(!empty($_POST['remember'])){
     
-    $cookie_name="name";
-    $cookie_value=$name;
-    $cookie_name2="password";
-    $cookie_value2=$password;
-
-    setcookie($cookie_name, $cookie_value, time() + (60*60*24* 30), "/"); 
-    setcookie($cookie_name2, $cookie_value2, time() + (60*60*24* 30), "/"); 
-
-    //print_r($_COOKIE);
-
+        $cookie_name="name";
+        $cookie_value=$name;
+        $cookie_name2="password";
+        $cookie_value2=$password;
+    
+        setcookie($cookie_name, $cookie_value, time() + (60*60*24* 30), "/"); 
+        setcookie($cookie_name2, $cookie_value2, time() + (60*60*24* 30), "/"); 
+    
+        //print_r($_COOKIE);
+    
+      }
+    
   }
 
+  
 
   if(!empty($name) && !empty($password)){
     // if($_COOKIE['name']==$name && $_COOKIE['password']==$password){
@@ -94,6 +117,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
   }
 
-    ?>
+
+include "footer.php"
+?>
 </body>
 </html>
