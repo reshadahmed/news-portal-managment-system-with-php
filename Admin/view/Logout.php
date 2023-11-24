@@ -8,14 +8,14 @@
 </head>
 <body>
     <?php
-    
-    setcookie("name", "", time() - (60*60*24* 30),"/");
-    setcookie("password", "", time() - (60*60*24* 30),"/");
+
+// setcookie("name", "", time() - (60*60*24* 30),"/");
+// setcookie("password", "", time() - (60*60*24* 30),"/");
     session_start();
     session_unset();
     session_destroy();
 
-    header("location: login.php")
+    header("location: Start.php")
     ?>
 </body>
 </html>

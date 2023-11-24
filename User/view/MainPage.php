@@ -7,12 +7,11 @@
     <title>Document</title>
 </head>
 <body>
-  <center>
-<ul>
-<a href="./Admin/view/Start.php">Admin</a><br>
-<a href="./Reporter/view/index.php">Reporter</a><br>
-<a href="./User/view/Login.php">User</a><br>
-</ul>  
-</center>
+
+    <center>
+    <h1>If You have an account, just Logged In otherwise Register</h1>
+    <h2><a href="./Login.php">Login</a></h2>
+    <h2><a href="./Registration.php">Registration</a></h2>
+    </center>
 </body>
 </html>

@@ -7,12 +7,15 @@
     <title>Document</title>
 </head>
 <body>
-  <center>
-<ul>
-<a href="./Admin/view/Start.php">Admin</a><br>
-<a href="./Reporter/view/index.php">Reporter</a><br>
-<a href="./User/view/Login.php">User</a><br>
-</ul>  
-</center>
+    <?php
+    
+    // setcookie("name", "", time() - (60*60*24* 30),"/");
+    // setcookie("password", "", time() - (60*60*24* 30),"/");
+    session_start();
+    session_unset();
+    session_destroy();
+
+    header("location: Mainpage.php")
+    ?>
 </body>
 </html>

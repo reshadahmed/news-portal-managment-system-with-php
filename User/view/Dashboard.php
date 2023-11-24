@@ -7,12 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-  <center>
-<ul>
-<a href="./Admin/view/Start.php">Admin</a><br>
-<a href="./Reporter/view/index.php">Reporter</a><br>
-<a href="./User/view/Login.php">User</a><br>
-</ul>  
-</center>
+    <?php include "Navbar.php" ?>
+    <h1>Hello <?php echo $_SESSION['uname'] ?></h1>
+    <img src="../data/11.jpg" alt="" height="500px">
 </body>
 </html>

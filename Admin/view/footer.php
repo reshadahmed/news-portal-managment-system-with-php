@@ -7,12 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-  <center>
-<ul>
-<a href="./Admin/view/Start.php">Admin</a><br>
-<a href="./Reporter/view/index.php">Reporter</a><br>
-<a href="./User/view/Login.php">User</a><br>
-</ul>  
-</center>
+    <hr>
+    <h4 style="text-align: center">Copyright@ 2023</h4>
 </body>
 </html>

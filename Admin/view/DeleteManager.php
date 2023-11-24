@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
-  <center>
-<ul>
-<a href="./Admin/view/Start.php">Admin</a><br>
-<a href="./Reporter/view/index.php">Reporter</a><br>
-<a href="./User/view/Login.php">User</a><br>
-</ul>  
-</center>
+<body class="home">
+<form action="" method="post">
+    Post title:
+    <input type="text" name="del">
+    <button type="submit">Delete</button>
+</form>
+
+
+
 </body>
 </html>

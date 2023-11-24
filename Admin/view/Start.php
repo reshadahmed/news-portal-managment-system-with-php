@@ -7,12 +7,11 @@
     <title>Document</title>
 </head>
 <body>
-  <center>
-<ul>
-<a href="./Admin/view/Start.php">Admin</a><br>
-<a href="./Reporter/view/index.php">Reporter</a><br>
-<a href="./User/view/Login.php">User</a><br>
-</ul>  
+    <center>
+<h3>The News Wave</h3>
+<button><a href="Login.php">Admin Login</a></button><br>
+<button><a href="AdminRegister.php">Admin Register</a></button>
 </center>
+<?php include "footer.php"; ?>
 </body>
 </html>

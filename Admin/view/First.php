@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,8 +8,23 @@
     <title>Document</title>
 </head>
 <body>
-    <hr>
-    <h3 style="text-align: center;">Copyright 2021</h3>
-    <hr>
+<?php
+include "header.php";
+
+?>
+<center>
+
+
+<?php
+if(isset($_SESSION["email"]) && isset($_SESSION["pass"])){
+    echo '<h3>The News Wave</h3>
+    <h4>Successfully Logged In</h4>';
+}
+
+?>
+
+
+</center>
+   <?php include "footer.php"; ?>
 </body>
 </html>
